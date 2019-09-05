@@ -23,6 +23,7 @@ def send_welcome(message):
 	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /helpfor the full scoop.", parse_mode="markdown")
   
 @bot.message_handler(commands=['support'])
-
+def send_
+  bot.send
   
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. If there's error on the bot token, please change it inside .env file."))
