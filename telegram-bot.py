@@ -27,7 +27,8 @@ WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to(message, "*Howdy, welcome to Recap Time bot!*" + "\n" + "\n" +
+	bot.reply_to(message, "*Howdy, welcome to Recap Time bot!*" + "\n" + 
+               "\n" +
               "To")
   
-print("Logged in as " + Telegram_Token + " on api.telegram.org")
+bot.polling(print("Logged in as " + Telegram_Token + " on api.telegram.org"))
