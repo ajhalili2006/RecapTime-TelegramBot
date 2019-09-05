@@ -12,6 +12,7 @@ BASEDIR = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(BASEDIR, '.env'))
 
 Telegram_Token = os.getenv("TOKEN")
+Telegram_BotUsername = os.getenv("BOT_USERNAME")
 
 bot = telebot.TeleBot(Telegram_Token)
 
@@ -27,8 +28,8 @@ WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to(message, "*Howdy, welcome to Recap Time bot!*" + "\n" + 
+	bot.reply_to(message, parse_mode="markdown", "*Howdy, welcome to Recap Time bot!*" + "\n" + 
                "\n" +
               "To")
   
-bot.polling(print("Logged in as " + Telegram_Token + " on api.telegram.org"))
+bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org"))
