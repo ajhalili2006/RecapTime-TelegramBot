@@ -14,7 +14,7 @@ bot = telebot.TeleBot(Telegram_Token)
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to(message, "Howdy, wecome to Recap Time bot!")
+	bot.reply_to(message, "Howdy, welcome to Recap Time bot!")
   
   
 bot.polling(print("Logged in as " + Telegram_Token + " on api.telegram.org"))
