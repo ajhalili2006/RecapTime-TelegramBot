@@ -18,16 +18,11 @@ bot = telebot.TeleBot(Telegram_Token)
 
 app = flask.Flask(__name__)
 
-WEBHOOK_HOST = 'https://garnet-crate.glitch.me'
-WEBHOOK_PORT = 8443  # 443, 80, 88 or 8443 (port need to be 'open')
-WEBHOOK_URL_BASE = "https://%s:%s" % (WEBHOOK_HOST, WEBHOOK_PORT)
-WEBHOOK_URL_PATH = "/%s/" % (Telegram_Token)
-WEBHOOK_SSL_CERT = './webhook_cert.pem'  # Path to the ssl certificate
-WEBHOOK_SSL_PRIV = './webhook_pkey.pem'  # Path to the ssl private key
-
-
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo", parse_mode="markdown")
+	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /helpfor the full scoop.", parse_mode="markdown")
   
-bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org"))
+@bot.message_handler(commands=['support'])
+
+  
+bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. If there's error on the bot token, please change it inside .env file."))
