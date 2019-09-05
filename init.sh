@@ -1,0 +1,1 @@
+PYTHONUNBUFFERED=true python3 telegram-bot.py

@@ -1,6 +1,6 @@
 {
   "install": "pip3 install --user -r requirements.txt",
-  "start": "PYTHONUNBUFFERED=true python3 telegram-bot.py && webpage.py",
+  "start": "bash init.sh",
   "watch": {
     "ignore": [
       "\\.pyc$"
