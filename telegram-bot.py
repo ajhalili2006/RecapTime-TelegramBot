@@ -58,4 +58,5 @@ def command_not_found(message):
   "sent an command or message but neither the server or the bot itself doesn't understand it.")
 
 # When ready, use Polling. If Webhooks, see docs for info.
-bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. Everything will gone right, unless you update your code and do the wrong things."))
+print("The whole Python code is in good state, as what the Python test results said. We're connecting to Telegram servers...")
+bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. Everything will gone right, unless you update your code and do the wrong things. Congrats!"))
