@@ -1,3 +1,21 @@
+# RecapTime-TelegramBot - An repo template to make your own
+# Recap Time bot on Telegram.
+# Copyright (C) 2019 - Andrei Jiroh
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+
 # Start the imports first.
 import os
 from dotenv import load_dotenv
@@ -28,7 +46,7 @@ def support_links(message):
   bot.send_message(message, "To access support page")
   
 @bot.message_handler(content_types=['text'])
-def error404(message):
-	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*", parse='markdown')
+def command_not_found(message):
+	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*, press the button below", parse_mode='markdown')
 
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. If there's error on the bot token, please change it inside .env file."))
