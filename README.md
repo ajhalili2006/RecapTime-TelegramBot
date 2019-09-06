@@ -18,3 +18,5 @@ The another way to remix this is using Git. Follow these:
 your target folder.
 - The setup is finished! See [this documentation about pyTelegramBotAPI on GitHub](https://github.com/eternnoir/pyTelegramBotAPI#readme) on how to set up it.
 Please skip the installation steps, as this pyTelegramBotAPI is pre-loaded here.
+
+### Remixing Code

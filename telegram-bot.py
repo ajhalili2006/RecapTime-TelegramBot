@@ -54,7 +54,8 @@ def support_links(message):
   
 @bot.message_handler(content_types=['text'])
 def command_not_found(message):
-	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*, press the button below or [click here](https://t.me/RecapTime_bot?start=help_404commandnotfound)", parse_mode='markdown')
+	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*, press the button below or [click here](https://t.me/RecapTime_bot?start=help_404commandnotfound)", parse_mode='markdown');print("An user tired to " +
+  "sent an command or message but neither the server or the bot itself doesn't understand it.")
 
-# When ready, use Polling. If Webhooks, see
-bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. If there's error on the bot token, please change it inside .env file."))
+# When ready, use Polling. If Webhooks, see docs for info.
+bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. Everything will gone right, unless you update your code and do the wrong things."))
