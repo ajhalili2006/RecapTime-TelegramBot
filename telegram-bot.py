@@ -26,5 +26,9 @@ def send_welcome(message):
 @bot.message_handler(commands=['support'])
 def support_links(message):
   bot.send_message(message, "To access support page")
+  
+@bot.message_handler(content_types=['text'])
+def error404(message):
+	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*", parse='markdown')
 
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. If there's error on the bot token, please change it inside .env file."))
