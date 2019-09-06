@@ -12,6 +12,6 @@ are not included when remixing this one.
 </a>
 
 The another way to remix this is using Git. Follow these:
-- Open terminal and type `$ git clone https://github.com/eternnoir/pyTelegramBotAPI.git`
+- Open terminal and type `git clone https://api.glitch.com/git/garnet-crate`. Hit Enter (or Return) to start importing source code from
 $ cd pyTelegramBotAPI
 $ python setup.py install
