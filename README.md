@@ -13,6 +13,8 @@ are not included when remixing this one.
 </a>
 
 The another way to remix this is using Git. Follow these:
-- Open terminal and type `git clone https://github.com/AndreiJirohHaliliDev2006/RecapTime-TelegramBot`. Hit Enter (or Return) to start importing source code from
-- cd pyTelegramBotAPI
-$ python setup.py install
+- Open terminal and type `cd /path/to/your-desired-git-projectname-here`.
+- Type `git clone https://github.com/AndreiJirohHaliliDev2006/RecapTime-TelegramBot`. Hit Enter (or Return) to start importing source code from
+your target folder.
+- The setup is finished! See [this documentation about pyTelegramBotAPI on GitHub](https://github.com/eternnoir/pyTelegramBotAPI#readme) on how to set up it.
+Please skip the installation steps, as this pyTelegramBotAPI is pre-loaded here.
