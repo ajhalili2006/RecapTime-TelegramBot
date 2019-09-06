@@ -25,6 +25,6 @@ def send_welcome(message):
   
 @bot.message_handler(commands=['support'])
 def support_links(message):
-  bot.send_message(message, "To access")
+  bot.send_message(message, "To access support page")
 
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. If there's error on the bot token, please change it inside .env file."))
