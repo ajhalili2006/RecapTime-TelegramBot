@@ -62,10 +62,11 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
     msg = bot.reply_to(message, "**Welcome to the mini Help Center**" + "\n" + "\n"
-                      "", reply_mark, parse_mode="markdown")
+                      "To get started navigating", reply_markup="markup", parse_mode="markdown")
     bot.register_next_step_handler(msg, process_name_step)
     markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
     markup.add('Male', 'Female')
+
     
     
 # When ready, use Polling. If Webhooks, see docs for info.
