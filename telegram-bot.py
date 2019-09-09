@@ -50,9 +50,7 @@ bot = telebot.TeleBot(Telegram_Token)
 app = flask.Flask(__name__)
 
 # We include some code like these for deep-linking.
-def command_extractor(text):
-    # Extracts the unique_code from the sent /start command.
-    return text.split()[1] if len(text.split()) > 1 else None
+
 
 # Now, set up the last part: the commands and others...
 @bot.message_handler(commands=['start'])
