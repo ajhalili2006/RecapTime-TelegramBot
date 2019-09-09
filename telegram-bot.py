@@ -58,16 +58,16 @@ def command_extractor(text):
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /help for the full scoop.\n\nTo view your settings", parse_mode="markdown")
-  
-@bot.message_handler(commands=['support, help'])
-def support_links(message):
-  bot.send_message(message, "To access support page")
-  
-@bot.message_handler(content_types=['text'])
-def command_not_found(message):
-	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*, press the button below or [click here](https://t.me/RecapTime_bot?start=help_404commandnotfound)", parse_mode='markdown');print("An user tired to " +
-  "sent an command or message but neither the server or the bot itself doesn't understand it.")
 
+@bot.message_handler(commands=['help'])
+def send_welcome(message):
+    msg = bot.reply_to(message, "**Welcome to the mini Help Center**" + "\n" + "\n"
+                      "", reply_mark, parse_mode="markdown")
+    bot.register_next_step_handler(msg, process_name_step)
+    markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
+    markup.add('Male', 'Female')
+    
+    
 # When ready, use Polling. If Webhooks, see docs for info.
 print("The whole Python code is in good state, as what the Python test results said. We're connecting to Telegram servers...")
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. Everything will gone right, unless you update your code and do the wrong things. Congrats!"))
