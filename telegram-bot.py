@@ -1,3 +1,4 @@
+# -----START LICENSE INFO-----
 # RecapTime-TelegramBot - An repo template to make your own
 # Recap Time bot on Telegram.
 # Copyright (C) 2019 - Andrei Jiroh
@@ -14,28 +15,37 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+#
+#
+
+# Let start boot up the whole program.
+print('Booting up...')
 
 # Start the imports first.
 print('Starting the import progress...')
 import os
 from dotenv import load_dotenv
 import telebot
+from telebot import util
 import logging
 import time
 import flask
 print('Imports success!')
 
 # Set up the directory name and the directories to the .env file first.
+print("Looking for the .env file...")
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
 load_dotenv(os.path.join(BASEDIR, '.env'))
+print("We found the file!")
 
-# Then setup the environmental variables. Make sure these are available from .env file.
+# Then setup the environmental variables. Make sure its coresponding are available from .env file.
 # Code example:
 # CONFIG_VAR-SHPRTCUT_HERE = os.getenv("ENV_VARIABLE_HERE")
 Telegram_Token = os.getenv("TOKEN")
 Telegram_BotUsername = os.getenv("BOT_USERNAME")
 
-# After we finish on environmental variables, try these first.
+# After we finish on environmental variables, do these business:
 bot = telebot.TeleBot(Telegram_Token)
 app = flask.Flask(__name__)
 
