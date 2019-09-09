@@ -22,4 +22,5 @@ Please skip the installation steps, as this pyTelegramBotAPI is pre-loaded here.
 
 ### Remixing Code
 
-You can configure your code whether you want, but don't forget to read
+You can configure your code whether you want, but don't forget to read the comments in `telegram-bot.py` and follow environmental variables
+template in the `.env.sample`
