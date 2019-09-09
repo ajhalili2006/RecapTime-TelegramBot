@@ -15,8 +15,8 @@
 #
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-#
+# -----END LICENSE INFO-----
+# -----SUPPORT INFO-----
 #
 
 # Let start boot up the whole program.
