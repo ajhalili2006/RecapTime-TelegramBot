@@ -15,14 +15,15 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-
 # Start the imports first.
+print('Starting the import progress...')
 import os
 from dotenv import load_dotenv
 import telebot
 import logging
 import time
 import flask
+print('Imports success!')
 
 # Set up the directory name and the directories to the .env file first.
 BASEDIR = os.path.abspath(os.path.dirname(__file__))
