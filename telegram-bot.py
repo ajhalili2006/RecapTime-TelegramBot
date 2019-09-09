@@ -70,7 +70,16 @@ def send_welcome(message):
     markup.row(itembtnv)
     markup.row(itembtnc)
 
+@bot.callback_query_handler(lambda query: query.data == "contact_support")
+def process_callback_1(query):
+  pass
+
+@bot.callback_query_handler(lambda query: query.data in ["ds", "sds"])
+def process_callback_2(query):
+  pass
+    
 # For other messages that the bot can't process, we use the fallback message for that case.
+#
 
     
 # When ready, use Polling. If Webhooks, see docs for info.
