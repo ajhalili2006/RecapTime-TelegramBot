@@ -21,4 +21,4 @@ Please skip the installation steps, as this pyTelegramBotAPI is pre-loaded here.
 
 ### Remixing Code
 
-You can configure your code whether you want
+You can configure your code whether you want, but don't forget to re
