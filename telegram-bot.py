@@ -47,6 +47,18 @@ print("We found the file!")
 # CONFIG_VAR-SHPRTCUT_HERE = os.getenv("ENV_VARIABLE_HERE")
 Telegram_Token = os.getenv("TOKEN")
 Telegram_BotUsername = os.getenv("BOT_USERNAME")
+print("The bot token is " + Telegram_Token + " and must be running at t.me/" + Telegram_BotUsername + ".")
 
+# We use "tb" instead of "bot before the equal sign"
 tb = telebot.TeleBot(Telegram_Token)
-print("Connected to servers! You're now signed in as " + Telegram_BotUsername)
+
+tb.polling(none_stop=False, interval=0, timeout=20)
+print("Connected to servers! You're now signed in as " + Telegram_BotUsername + ", so we'll now receiving messages.")
+
+# 
+updates = tb.get_updates()
+print("We got the updates!")
+
+@bot.message_handler(commands=['start', 'help'])
+def send_welcome(message):
+	bot.reply_to(message, "Howdy, how are you doing?")
