@@ -17,12 +17,13 @@ P.S.: If you want the latest commit from GitHub, try this: <https://glitch.com/e
 
 The another way to remix this is using Git. Follow these:
 - Open terminal and type `cd /path/to/your-desired-git-projectname-here`.
-- Type `git clone https://github.com/AndreiJirohHaliliDev2006/RecapTime-TelegramBot.git`. Hit Enter (or Return) to start 
+- Type `git clone https://github.com/AndreiJirohHaliliDev2006/RecapTime-TelegramBot.git` or `git clone https://api.glitch.com/git/garnet-crate.git`.
+Hit Enter (or Return) to start 
 importing source code from
 your target folder.
 - The setup is finished! See [this documentation about pyTelegramBotAPI on GitHub](https://github.com/eternnoir/pyTelegramBotAPI#readme) on how to set up it.
 Please skip the installation steps, as this pyTelegramBotAPI is pre-loaded here.
-- When the code is upd
+- When you remixed the code on Glitch, it will automatically deployed and available online to work for your Teegram bot.
 
 ### Remixing Code
 
@@ -31,3 +32,5 @@ template in the `.env.sample` file.
 
 To avoid problems, please test your bot first before deploying for general use. Your bot users must provide an way to get support, such as
 our `/support` command implementation.
+
+Also, we made `telegram-bot-staging.py` file for you to play codes there.
