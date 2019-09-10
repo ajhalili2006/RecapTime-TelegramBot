@@ -18,6 +18,9 @@
 # -----END LICENSE INFO-----
 # -----SUPPORT INFO-----
 #
+#
+#
+# -----END SUPPORT INFO----
 
 # Let start boot up the whole program.
 print('Booting up...')
