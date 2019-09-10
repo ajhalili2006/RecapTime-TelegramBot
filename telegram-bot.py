@@ -31,6 +31,7 @@ import os
 from dotenv import load_dotenv
 import telebot
 from telebot import util
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import logging
 import time
 import flask
@@ -65,21 +66,21 @@ def send_welcome(message):
 def send_welcome(message):
     msg = bot.reply_to(message, "**Welcome to the mini Help Center!**" + "\n" + "\n" +
                       "Please select an option to navigate around the Help Center.", parse_mode="markdown")
-    markup = types.InlineKeyboardMarkup()
-    contact_support = types.InlineKeyboardButton('Contact Support', callback_data="contact_support")
-    open_hc = types.InlineKeyboardButton('Open Help Center', callback_data="open_hc")
-    commands_help = types.InlineKeyboardButton('Commands Help', callback_data="commands_help")
+    markup = InlineKeyboardMarkup()
+    contact_support = InlineKeyboardButton('Contact Support', callback_data="contact_support")
+    open_hc = InlineKeyboardButton('Open Help Center', callback_data="open_hc")
+    commands_help = InlineKeyboardButton('Open Commands Help', callback_data="commands_help")
     markup.row(cntact_support)
     markup.row(itembtnv)
     markup.row(itembtnc)
 
 @bot.callback_query_handler(lambda query: query.data == "contact_support")
 def process_callback_1(query):
-  msg = bot.send_message
+  msg = bot.send_message("To contact Bot Support, open an chat with @Support_byMPTeam", parse_mode="markdown")
 
-@bot.callback_query_handler(lambda query: query.data in ["ds", "sds"])
+@bot.callback_query_handler(lambda query: query.data in ["open_hc", "commands_help"])
 def process_callback_2(query):
-  pass
+  msg = bot.send_message("Not found?")
     
 # For other messages that the bot can't process, we use the fallback message for that case.
 #
