@@ -74,6 +74,8 @@ def send_welcome(message):
     markup.row(itembtnv)
     markup.row(itembtnc)
 
+
+# For callback queries
 @bot.callback_query_handler(lambda query: query.data == "contact_support")
 def process_callback_1(query):
   msg = bot.send_message("To contact Bot Support, open an chat with @Support_byMPTeam", parse_mode="markdown")
@@ -83,9 +85,11 @@ def process_callback_2(query):
   msg = bot.send_message("Not found?")
     
 # For other messages that the bot can't process, we use the fallback message for that case.
-#
+@bot.message_handler(content_types=['text'])
+def command_not_found(message):
+	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*, press the button below or [click here](https://t.me/RecapTime_bot?start=help_404commandnotfound)", parse_mode='markdown');print("An user tired to " +
+  "sent an command or message but neither the server or the bot itself doesn't understand it.")
 
-    
 # When ready, use Polling. If Webhooks, see docs for info.
 print("The whole Python code is in good state, as what the Python test results said. We're connecting to Telegram servers...")
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. Everything will gone right, unless you update your code and do the wrong things. Congrats!"))
