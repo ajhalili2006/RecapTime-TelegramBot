@@ -66,10 +66,10 @@ def send_welcome(message):
 def send_welcome(message):
     msg = bot.reply_to(message, "**Welcome to the mini Help Center!**" + "\n" + "\n" +
                       "Please select an option to navigate around the Help Center.", parse_mode="markdown")
-    markup = InlineKeyboardMarkup()
-    contact_support = InlineKeyboardButton('Contact Support', callback_data="contact_support")
-    open_hc = InlineKeyboardButton('Open Help Center', callback_data="open_hc")
-    commands_help = InlineKeyboardButton('Open Commands Help', callback_data="commands_help")
+    markup = types.InlineKeyboardMarkup()
+    contact_support = types.InlineKeyboardButton('Contact Support', callback_data="contact_support")
+    open_hc = types.InlineKeyboardButton('Open Help Center', callback_data="open_hc")
+    commands_help = types.InlineKeyboardButton('Open Commands Help', callback_data="commands_help")
     markup.row(cntact_support)
     markup.row(itembtnv)
     markup.row(itembtnc)
