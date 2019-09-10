@@ -75,7 +75,7 @@ def send_welcome(message):
 
 @bot.callback_query_handler(lambda query: query.data == "contact_support")
 def process_callback_1(query):
-  pass
+  msg = bot.send_message
 
 @bot.callback_query_handler(lambda query: query.data in ["ds", "sds"])
 def process_callback_2(query):
