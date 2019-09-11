@@ -38,5 +38,7 @@ Also, we made `telegram-bot-staging.py` file for you to play codes there. (Stay 
 > **WARNING: The official bot is under canary testing! Not for production use.**
 > The bot is currently in canary testing. Please use it at your own risk.
 > In case the bot ran into problems, please notify me on Telegram at [Recap Time Live Chat](https://t.me/RecapTime_LiveChat) or [create an new issue on GitHub](https://github.com/AndreiJirohHaliliDev2006/RecapTime-TelegramBot/issues/new).
+>
+> You can also help in improving the codebase to make the bot better. See `CONTRIBUTING.md` for more info.
 
 To see how this bot works in action and in realtime, start a Telegram chat with the official Recap Time bot at <https://t.me/RecapTime_bot>.
