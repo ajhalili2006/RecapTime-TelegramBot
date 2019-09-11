@@ -1,1 +1,1 @@
-PYTHONUNBUFFERED=true python3 telegram-bot.py
+PYTHONUNBUFFERED=true python3 telegram-bot-production.py

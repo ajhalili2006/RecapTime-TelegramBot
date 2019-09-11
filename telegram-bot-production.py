@@ -28,10 +28,11 @@ print('Booting up...')
 # Start the imports first.
 print('Starting the import progress...')
 import os
+import dotenv
 from dotenv import load_dotenv
 import telebot
+from telebot import types
 from telebot import util
-from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import logging
 import time
 import flask
@@ -56,7 +57,7 @@ app = flask.Flask(__name__)
 # We include some code like these for deep-linking.
 
 
-# Now, set up the last part: the commands and others...
+# Now, set up the last part: the commands and others... So, let's start the commands first.
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /help for the full scoop.\n\nTo view your settings", parse_mode="markdown")
@@ -65,14 +66,14 @@ def send_welcome(message):
 @bot.message_handler(commands=['help'])
 def send_welcome(message):
     msg = bot.reply_to(message, "**Welcome to the mini Help Center!**" + "\n" + "\n" +
-                      "Please select an option to navigate around the Help Center.", parse_mode="markdown")
+                      "Please select an option to navigate around the Help Center.", parse_mode="markdown", inline_markup)
     markup = types.InlineKeyboardMarkup()
     contact_support = types.InlineKeyboardButton('Contact Support', callback_data="contact_support")
     open_hc = types.InlineKeyboardButton('Open Help Center', callback_data="open_hc")
     commands_help = types.InlineKeyboardButton('Open Commands Help', callback_data="commands_help")
-    markup.row(cntact_support)
-    markup.row(itembtnv)
-    markup.row(itembtnc)
+    markup.row(contact_support)
+    markup.row(open_hc)
+    markup.row(commands_help)
 
 
 # For callback queries
@@ -89,6 +90,55 @@ def process_callback_2(query):
 def command_not_found(message):
 	bot.reply_to(message, "Something went wrong on our side. Please try again or see /help for details.\n\nFor more information about *404 Command Not Found*, press the button below or [click here](https://t.me/RecapTime_bot?start=help_404commandnotfound)", parse_mode='markdown');print("An user tired to " +
   "sent an command or message but neither the server or the bot itself doesn't understand it.")
+
+# Speaking of Inline mode, we use some code samples from
+@bot.inline_handler(lambda query: query.query == 'text')
+def query_text(inline_query):
+    try:
+        r = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
+        r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
+        bot.answer_inline_query(inline_query.id, [r, r2])
+    except Exception as e:
+        print(e)
+
+
+@bot.inline_handler(lambda query: query.query == 'photo1')
+def query_photo(inline_query):
+    try:
+        r = types.InlineQueryResultPhoto('1',
+                                         'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
+                                         'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
+                                         input_message_content=types.InputTextMessageContent('hi'))
+        r2 = types.InlineQueryResultPhoto('2',
+                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
+                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg')
+        bot.answer_inline_query(inline_query.id, [r, r2], cache_time=1)
+    except Exception as e:
+        print(e)
+
+
+@bot.inline_handler(lambda query: query.query == 'video')
+def query_video(inline_query):
+    try:
+        r = types.InlineQueryResultVideo('1',
+                                         'https://github.com/eternnoir/pyTelegramBotAPI/blob/master/tests/test_data/test_video.mp4?raw=true',
+                                         'video/mp4', 'Video',
+                                         'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
+                                         'Title'
+                                         )
+        bot.answer_inline_query(inline_query.id, [r])
+    except Exception as e:
+        print(e)
+
+
+@bot.inline_handler(lambda query: len(query.query) is 0)
+def default_query(inline_query):
+    try:
+        r = types.InlineQueryResultArticle('1', 'default', types.InputTextMessageContent('default'))
+        bot.answer_inline_query(inline_query.id, [r])
+    except Exception as e:
+        print(e)
+
 
 # When ready, use Polling. If Webhooks, see docs for info.
 print("The whole Python code is in good state, as what the Python test results said. We're connecting to Telegram servers...")
