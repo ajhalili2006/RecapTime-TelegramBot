@@ -1,5 +1,0 @@
-[credential]
-	helper = cache  --timeout=172800
-[user]
-	name = Made by the Pins team
-	email = teamalaspinsph@gmail.com
