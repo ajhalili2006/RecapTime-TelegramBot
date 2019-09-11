@@ -56,7 +56,9 @@ bot = telebot.TeleBot(Telegram_Token)
 app = flask.Flask(__name__)
 
 # We include some code like these for deep-linking.
-
+# ---START IMPORTS HERE---
+# TODO: Please help me make code for deep links!
+# ---AND END HERE---
 
 # Now, set up the last part: the commands and others... So, let's start the commands first.
 @bot.message_handler(commands=['start'])
@@ -78,7 +80,7 @@ def query_text(inline_query):
         r3 = types.InlineQueryResultPhoto('1',
                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
-                                         input_message_content=types.InputTextMessageContent('hi'))
+                                         )
         r4 = types.InlineQueryResultPhoto('2',
                                           'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
                                           'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg')
@@ -100,8 +102,7 @@ def default_query(inline_query):
         bot.answer_inline_query(inline_query.id, [default])
     except Exception as e:
         print(e)
-
-
+# We're
 # When ready, use Polling. If Webhooks, see docs for info.
 print("The whole Python code is in good state, as what the Python test results said. We're connecting to Telegram servers...")
 bot.polling(print("Logged in as " + Telegram_BotUsername + " on api.telegram.org. Everything will gone right, unless you update your code and do the wrong things. Congrats!"))
