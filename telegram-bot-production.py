@@ -97,8 +97,8 @@ def query_text(inline_query):
 @bot.inline_handler(lambda query: len(query.query) is 0)
 def default_query(inline_query):
     try:
-        default = types.InlineQueryResultArticle('1', 'For help in using my inline search, click me.', types.InputTextMessageContent('To get started using me, you can try the following keywords to search around the bot.' +
-        '\n' + '\n' + "", parse_mode="markdown"))
+        default = types.InlineQueryResultArticle('1', 'For help in using my inline search, click me.', types.InputTextMessageContent("To get started using me, you can try the following keywords to search around the bot." +
+        "\n" + "\n" + "To see this help message again, just type `@RecapTime_bot` then space.", parse_mode="markdown"))
         bot.answer_inline_query(inline_query.id, [default])
     except Exception as e:
         print(e)

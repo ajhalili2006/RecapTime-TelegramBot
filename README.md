@@ -3,6 +3,7 @@
 In this Glitch project, we host our Recap Time Telegram bot and its code here. To get started, scroll down.
 
 ## Setting up on your own place
+
 ### Forking the Example Bot Project
 
 Remix this project to your account to use it. Just click the quick **Remix This** button below to get the latest update,
@@ -23,7 +24,7 @@ importing source code from
 your target folder.
 - The setup is finished! See [this documentation about pyTelegramBotAPI on GitHub](https://github.com/eternnoir/pyTelegramBotAPI#readme) on how to set up it.
 Please skip the installation steps, as this pyTelegramBotAPI is pre-loaded here.
-- When you remixed the code on Glitch, it will automatically deployed and available online to work for your Teegram bot.
+- When you remixed the code on Glitch, it will automatically deployed and available online to work for your Telegram bot.
 
 ### Remixing Code
 
