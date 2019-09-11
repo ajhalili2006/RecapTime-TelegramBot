@@ -32,6 +32,7 @@ import dotenv
 from dotenv import load_dotenv
 import telebot
 from telebot import types
+from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 from telebot import util
 import logging
 import time
@@ -61,29 +62,6 @@ app = flask.Flask(__name__)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /help for the full scoop.\n\nTo view your settings", parse_mode="markdown")
-  
-# For /help command, we use Inline Keyboard to see options below the text message.
-@bot.message_handler(commands=['help'])
-def send_welcome(message):
-    msg = bot.reply_to(message, "**Welcome to the mini Help Center!**" + "\n" + "\n" +
-                      "Please select an option to navigate around the Help Center.", parse_mode="markdown", inline_markup)
-    markup = types.InlineKeyboardMarkup()
-    contact_support = types.InlineKeyboardButton('Contact Support', callback_data="contact_support")
-    open_hc = types.InlineKeyboardButton('Open Help Center', callback_data="open_hc")
-    commands_help = types.InlineKeyboardButton('Open Commands Help', callback_data="commands_help")
-    markup.row(contact_support)
-    markup.row(open_hc)
-    markup.row(commands_help)
-
-
-# For callback queries
-@bot.callback_query_handler(lambda query: query.data == "contact_support")
-def process_callback_1(query):
-  msg = bot.send_message("To contact Bot Support, open an chat with @Support_byMPTeam", parse_mode="markdown")
-
-@bot.callback_query_handler(lambda query: query.data in ["open_hc", "commands_help"])
-def process_callback_2(query):
-  msg = bot.send_message("Not found?")
     
 # For other messages that the bot can't process, we use the fallback message for that case.
 @bot.message_handler(content_types=['text'])
@@ -102,7 +80,7 @@ def query_text(inline_query):
         print(e)
 
 
-@bot.inline_handler(lambda query: query.query == 'photo1')
+@bot.inline_handler(lambda query: query.query == 'photo: samples_github-repo:eternnoir/pyTelegramBotAPI')
 def query_photo(inline_query):
     try:
         r = types.InlineQueryResultPhoto('1',
@@ -134,7 +112,7 @@ def query_video(inline_query):
 @bot.inline_handler(lambda query: len(query.query) is 0)
 def default_query(inline_query):
     try:
-        r = types.InlineQueryResultArticle('1', 'default', types.InputTextMessageContent('default'))
+        r = types.InlineQueryResultArticle(, 'For help in using my inline search, click me.', types.InputTextMessageContent('To get started using me, you can...'))
         bot.answer_inline_query(inline_query.id, [r])
     except Exception as e:
         print(e)
