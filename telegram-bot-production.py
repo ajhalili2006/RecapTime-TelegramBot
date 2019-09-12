@@ -60,13 +60,17 @@ app = flask.Flask(__name__)
 # TODO: Please help me make code for deep links!
 # ---AND END HERE---
 
+# For inline ky
+
 # Now, set up the last part: the commands and others... So, let's start the commands first.
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
-	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /help for the full scoop.\n\nTo view your settings", parse_mode="markdown")
+	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /help for the full scoop.\n\n", parse_mode="markdown")
+print("An new user just started the bot")
   
 @bot.message_handler(commands=['quickstart'])
-def
+def getting_started(message):
+  bot.reply_to(message, )
     
 # For other messages that the bot can't process, we use the fallback message for that case.
 @bot.message_handler(content_types=['text'])
