@@ -17,6 +17,7 @@ markComment: >
   recent activity. It will be closed if no further activity occurs. To learn more
   about our policies regarding issues marked as stale by 
   [Recap Time Probot App](https://github.com/marketplace/recap-time-probot-app),
-  our in-house GitHub bot deployment, see `docs/recap-time-probot` fie for more info.
+  our in-house GitHub bot deployment, see `docs/recap-time-probot-app/stale.md`
+  file for more info.
 # Comment to post when closing a stale issue. Set to `false` to disable
 closeComment: false

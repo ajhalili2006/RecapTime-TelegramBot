@@ -1,0 +1,1 @@
+# Recap Time Probot App Docs: Stale Support Tickets (aka Stale Issues & Pull Requests)
