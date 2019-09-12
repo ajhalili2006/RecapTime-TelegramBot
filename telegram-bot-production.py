@@ -60,7 +60,7 @@ app = flask.Flask(__name__)
 # TODO: Please help me make code for deep links!
 # ---AND END HERE---
 
-# For inline ky
+# For inline keyboard in 
 
 # Now, set up the last part: the commands and others... So, let's start the commands first.
 @bot.message_handler(commands=['start'])
@@ -70,7 +70,7 @@ print("An new user just started the bot")
   
 @bot.message_handler(commands=['quickstart'])
 def getting_started(message):
-  bot.reply_to(message, )
+  bot.reply_to(message, "Welcome to the Qucikstart!", parse_made="markdown")
     
 # For other messages that the bot can't process, we use the fallback message for that case.
 @bot.message_handler(content_types=['text'])
