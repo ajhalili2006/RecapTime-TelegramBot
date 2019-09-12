@@ -64,6 +64,9 @@ app = flask.Flask(__name__)
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
 	bot.reply_to(message,"*Howdy, welcome to Recap Time bot!*\n\nTo get started using me, see /quickstart or /help for the full scoop.\n\nTo view your settings", parse_mode="markdown")
+  
+@bot.message_handler(commands=['quickstart'])
+def
     
 # For other messages that the bot can't process, we use the fallback message for that case.
 @bot.message_handler(content_types=['text'])
@@ -75,22 +78,20 @@ def command_not_found(message):
 @bot.inline_handler(lambda query: query.query == 'samples_github-repo:eternnoir/pyTelegramBotAPI')
 def query_text(inline_query):
     try:
-        r = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
-        r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
-        r3 = types.InlineQueryResultPhoto('1',
+        media_samples = types.InlineQueryResultPhoto('3',
                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/kitten.jpg',
                                          )
-        r4 = types.InlineQueryResultPhoto('2',
+        media_samples2 = types.InlineQueryResultPhoto('4',
                                           'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
                                           'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg')
-        r5 = types.InlineQueryResultVideo('1',
+        media_samples3 = types.InlineQueryResultVideo('5',
                                          'https://github.com/eternnoir/pyTelegramBotAPI/blob/master/tests/test_data/test_video.mp4?raw=true',
                                          'video/mp4', 'Video',
                                          'https://raw.githubusercontent.com/eternnoir/pyTelegramBotAPI/master/examples/detailed_example/rooster.jpg',
                                          'Title'
                                          )
-        bot.answer_inline_query(inline_query.id, [r, r2, r3, r4, r5], cache_time=1)
+        bot.answer_inline_query(inline_query.id, [media_samples, media_samples2], media_samples3)
     except Exception as e:
         print(e)
 
@@ -99,6 +100,8 @@ def default_query(inline_query):
     try:
         default = types.InlineQueryResultArticle('1', 'For help in using my inline search, click me.', types.InputTextMessageContent("To get started using me, you can try the following keywords to search around the bot." +
         "\n" + "\n" + "To see this help message again, just type `@RecapTime_bot` then space.", parse_mode="markdown"))
+        articlesearch = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
+        r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
         bot.answer_inline_query(inline_query.id, [default])
     except Exception as e:
         print(e)
