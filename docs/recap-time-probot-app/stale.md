@@ -3,9 +3,11 @@
 When an issue or pull request doesn't had recent activity for up to 60 days, our Recap Time Probot app will
 fire up an automated message before it will automatically close after another 14 days.
 
+# How this
+
 ## The Configuration Code
 
-You can also see this code on `.github/stale.yml`
+You can also see this code on `.github/stale.yml` folder on GitHub.
 
     # Number of days of inactivity before an issue becomes stale
     daysUntilStale: 60
