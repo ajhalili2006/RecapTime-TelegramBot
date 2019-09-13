@@ -3,7 +3,7 @@
 When an issue or pull request doesn't had recent activity for up to 60 days, our Recap Time Probot app will
 fire up an automated message before it will automatically close after another 14 days.
 
-# How this
+# How the Stale plugin works?
 
 ## The Configuration Code
 
