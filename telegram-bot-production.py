@@ -103,7 +103,7 @@ def query_text(inline_query):
 def default_query(inline_query):
     try:
         default = types.InlineQueryResultArticle('1', 'For help in using my inline search, click me.', types.InputTextMessageContent("To get started using me, you can try the following keywords to search around the bot." +
-        "\n" + "\n" + "To see this help message again, just type `@RecapTime_bot` then space.", parse_mode="markdown"))
+        "\n" + "\n" + "To see this help message again, just type `@RecapTime_bot` then space (or try `@RecapTime help` instead).", parse_mode="markdown"))
         articlesearch = types.InlineQueryResultArticle('1', 'Result1', types.InputTextMessageContent('hi'))
         r2 = types.InlineQueryResultArticle('2', 'Result2', types.InputTextMessageContent('hi'))
         bot.answer_inline_query(inline_query.id, [default])
