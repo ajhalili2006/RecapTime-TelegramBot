@@ -60,7 +60,7 @@ app = flask.Flask(__name__)
 # TODO: Please help me make code for deep links!
 # ---AND END HERE---
 
-# For inline keyboard in 
+# For inline keyboard in, we use these code like these:
 
 # Now, set up the last part: the commands and others... So, let's start the commands first.
 @bot.message_handler(commands=['start'])
