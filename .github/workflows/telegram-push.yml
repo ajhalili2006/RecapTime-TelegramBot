@@ -1,0 +1,19 @@
+name: New Commits Detected - Notify on Telegram
+on: [push]
+jobs:
+
+  build:
+    name: Send Telegram Message
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: send custom message with args
+      uses: appleboy/telegram-action@master
+      env:
+        TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+        TELEGRAM_TO: ${{ secrets.TELEGRAM_TO }}
+      with:
+        format: markdown
+        message: |
+          An **new commit** with hash `${{ commit.sha }}` has been deployed to ${{ repo }} on GitHub.
+          See https://github.com/MadeByThePins/${{ repo }}/commit/${{ commit.sha }} for the full scoop.
